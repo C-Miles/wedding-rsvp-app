@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import {
   TextField,
@@ -38,12 +39,10 @@ function RSVP() {
       rsvpDate: new Date().toISOString(),
       guests,
     };
-
-    console.log(payload)
   };
 
   return (
-    <div>
+    <div style={{ width: "90%" }}>
       <Typography variant="h4" gutterBottom>
         RSVP
       </Typography>
