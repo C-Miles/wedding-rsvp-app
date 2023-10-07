@@ -4,8 +4,7 @@ import "./index.css";
 import App from "./App";
 
 import { initializeApp } from "firebase/app";
-// import { getDatabase, ref, set } from "firebase/database"
-// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore } from "firebase/firestore";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -23,20 +22,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-// function writeGuestData(guestId, firstName, LatName) {
-  // const db = getDatabase();
-  // const db = getFirestore(app);
-
-//   const reference = ref(db, 'guests/' + guestId);
-
-//   set(reference, {
-//     guestFirstName: firstName,
-//     guestLastName: LatName,
-//   })
-// }
-
-// writeGuestData("milesID", "Chris", "Miles")
+export const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -48,7 +48,6 @@ function LandingPage() {
           component="h1"
           gutterBottom
           align="center"
-          // fontWeight="bold"
         >
           Christopher & Casey
         </Typography>

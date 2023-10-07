@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { addDoc, collection, writeBatch, doc } from "firebase/firestore";
+import {db} from "./index.js"
 
 import { useForm } from "react-hook-form";
 import {
@@ -39,7 +41,31 @@ function RSVP() {
       rsvpDate: new Date().toISOString(),
       guests,
     };
+
+    addGuestsToFirestore(payload)
   };
+
+  const addGuestsToFirestore = async (payload) => {
+    console.log(payload);
+    try {
+      const guestCollection = collection(db, "guests");
+      const batch = writeBatch(db);
+    
+      payload.guests.forEach((guest) => {
+        const newGuestRef = doc(guestCollection);
+        batch.set(newGuestRef, {
+          ...guest,
+          rsvpDate: payload.rsvpDate,
+        });
+      });
+    
+      await batch.commit();
+      console.log("All guests added successfully");
+    } catch (e) {
+      console.error("Error adding guests: ", e);
+    }
+  };
+  
 
   return (
     <div style={{ width: "90%" }}>
@@ -110,16 +136,18 @@ function RSVP() {
                   <MenuItem value="beef">Beef</MenuItem>
                 </Select>
               </FormControl>
+
+              <TextField
+                label={`Song Recommendation for Guest ${index + 1}`}
+                {...register(`guest${index + 1}SongRecommendation`)}
+                variant="outlined"
+                margin="normal"
+                fullWidth
+              />
             </div>
           ))}
 
-          <TextField
-            label="Song Recommendation"
-            {...register("songRecommendation")}
-            variant="outlined"
-            margin="normal"
-            fullWidth
-          />
+
 
           <Button
             type="submit"
