@@ -18,7 +18,7 @@ const firebaseConfig = {
   storageBucket: "miles-wedding-rsvp.appspot.com",
   messagingSenderId: "556928472603",
   appId: "1:556928472603:web:654bb91240fc4cbc674abe",
-  measurementId: "G-7SQL72SDTK"
+  measurementId: "G-7SQL72SDTK",
 };
 
 const app = initializeApp(firebaseConfig);
