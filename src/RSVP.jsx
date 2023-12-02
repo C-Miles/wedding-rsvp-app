@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { addDoc, collection, writeBatch, doc } from "firebase/firestore";
-import {db} from "./index.js"
+import { collection, doc, writeBatch } from "firebase/firestore";
+import { db } from "./index.js";
 
 import { useForm } from "react-hook-form";
 import {
@@ -42,7 +42,7 @@ function RSVP() {
       guests,
     };
 
-    addGuestsToFirestore(payload)
+    addGuestsToFirestore(payload);
   };
 
   const addGuestsToFirestore = async (payload) => {
@@ -50,7 +50,7 @@ function RSVP() {
     try {
       const guestCollection = collection(db, "guests");
       const batch = writeBatch(db);
-    
+
       payload.guests.forEach((guest) => {
         const newGuestRef = doc(guestCollection);
         batch.set(newGuestRef, {
@@ -58,14 +58,13 @@ function RSVP() {
           rsvpDate: payload.rsvpDate,
         });
       });
-    
+
       await batch.commit();
       console.log("All guests added successfully");
     } catch (e) {
       console.error("Error adding guests: ", e);
     }
   };
-  
 
   return (
     <div style={{ width: "90%" }}>
@@ -127,9 +126,8 @@ function RSVP() {
                 <Select
                   label={`Dinner Choice for Guest ${index + 1}`}
                   {...register(`guest${index + 1}DinnerChoice`, {
-                    required: `Dinner choice for Guest ${
-                      index + 1
-                    } is required`,
+                    required: `Dinner choice for Guest ${index + 1
+                      } is required`,
                   })}
                 >
                   <MenuItem value="chicken">Chicken</MenuItem>
@@ -146,8 +144,6 @@ function RSVP() {
               />
             </div>
           ))}
-
-
 
           <Button
             type="submit"
