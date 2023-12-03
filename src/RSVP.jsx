@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { collection, doc, writeBatch } from "firebase/firestore";
 import { db } from "./index.js";
 
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import { Controller, useForm } from "react-hook-form";
 import {
   Button,
@@ -13,7 +16,12 @@ import {
   Typography,
 } from "@mui/material";
 
+import KissKiss from "./images/kiss_kiss.jpg";
+
 function RSVP() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   const {
     control,
     formState: { isValid },
@@ -79,13 +87,12 @@ function RSVP() {
         alignItems: "center",
       }}
     >
-      {/* <NavBar/>   */}
       <div
         style={{
           width: "90%",
           display: "flex",
           flexDirection: "column",
-          marginTop: "10%",
+          marginTop: "3%",
         }}
       >
         {!isSubmitted && (
@@ -94,9 +101,32 @@ function RSVP() {
           </Typography>
         )}
         {isSubmitted ? (
-          <Typography variant="h5" style={{ alignSelf: "center" }}>
-            Thank you for your RSVP!
-          </Typography>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "center",
+              justifyContent: "center",
+              marginBottom: "5%",
+            }}
+          >
+            <Typography
+              variant={isSmallScreen ? "h6" : "h4"}
+              style={{ alignSelf: "center", marginBottom: "15px" }}
+            >
+              Thank you for your RSVP!
+            </Typography>
+
+            <img
+              alt="Venue"
+              src={KissKiss}
+              style={{
+                width: isSmallScreen ? "85%" : "40%",
+                height: "auto",
+                alignSelf: "center",
+              }}
+            />
+          </div>
         ) : (
           <div
             style={{
