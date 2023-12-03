@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { collection, doc, writeBatch } from "firebase/firestore";
 import { db } from "./index.js";
 
@@ -34,6 +34,13 @@ function RSVP() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [numOfGuests, setNumOfGuests] = useState(1);
+
+  useEffect(() => {
+    const submitted = localStorage.getItem("rsvpSubmitted");
+    if (submitted === "true") {
+      setIsSubmitted(true);
+    }
+  }, []);
 
   const onSubmit = (data) => {
     const guests = [];
@@ -72,6 +79,7 @@ function RSVP() {
 
       await batch.commit();
       console.log("All guests added successfully");
+      localStorage.setItem("rsvpSubmitted", "true");
       setIsSubmitted(true);
     } catch (e) {
       console.error("Error adding guests: ", e);
