@@ -37,12 +37,12 @@ function LandingPage() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        marginTop: '2%',
       }}
     >
-      <Box width={isSmallScreen ? "70%" : "60%"} marginBottom={3}>
+      <Box width={isSmallScreen ? "70%" : "60%"} marginBottom={3} style={{display: "flex", alignItems: 'center', flexDirection: 'column'}}>
         <Typography
           variant={isSmallScreen ? "h4" : "h2"}
           component="h1"
@@ -54,7 +54,7 @@ function LandingPage() {
         <img
           src={isSmallScreen ? Kyoto : Alaska}
           alt="Portrait"
-          style={{ maxWidth: "100%", height: "auto" }}
+          style={{ maxWidth: isSmallScreen ? "100%" : '75%', height: "auto" }}
         />
       </Box>
       <form onSubmit={handleSubmit(onSubmit)}>
