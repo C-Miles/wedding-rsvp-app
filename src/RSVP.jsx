@@ -101,6 +101,7 @@ function RSVP() {
           display: "flex",
           flexDirection: "column",
           marginTop: "3%",
+          marginBottom: "30%",
         }}
       >
         {!isSubmitted && (

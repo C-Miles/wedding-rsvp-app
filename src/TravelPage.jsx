@@ -102,7 +102,14 @@ function TravelPage() {
         gutterBottom
         style={{ marginTop: "20px" }}
       >
-        Columbus International Airport
+        John Glenn International Airport
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        component="h2"
+        gutterBottom
+      >
+        Conveniently located 7 miles from Downtown/Venue location
       </Typography>
       <Divider style={{ width: "80%", marginBottom: "20px" }} />
 
@@ -175,7 +182,7 @@ function TravelPage() {
             style={{
               display: "flex",
               alignItems: "center",
-              marginBottom: "5%",
+              marginBottom: "30%",
             }}
           >
             Call Airport <PhoneIcon style={{ marginLeft: "5px" }} />

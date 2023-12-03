@@ -50,7 +50,7 @@ function ParkingPage() {
         </Typography>
         <Typography
           variant="subtitle2"
-          style={{ marginTop: "10px", marginBottom: "5%" }}
+          style={{ marginTop: "10px", marginBottom: "30%" }}
         >
           It is of utmost importance that you arrive during "guest arrival
           time", not earlier.

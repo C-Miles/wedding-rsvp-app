@@ -96,7 +96,7 @@ function VenuePage() {
           style={{
             display: "flex",
             alignItems: "center",
-            marginBottom: "15px",
+            marginBottom: "30%",
           }}
         >
           <Link
