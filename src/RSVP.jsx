@@ -13,8 +13,6 @@ import {
   Typography,
 } from "@mui/material";
 
-import NavBar from './NavBar';
-
 function RSVP() {
   const {
     control,
@@ -73,109 +71,124 @@ function RSVP() {
   };
 
   return (
-    <div style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-    {/* <NavBar/>   */}
-    <div style={{ width: "90%", display: 'flex', flexDirection: 'column', marginTop: '10%' }}>
-      {!isSubmitted && <Typography variant="h4" gutterBottom>
-        RSVP
-      </Typography>
-}
-      {isSubmitted ? (
-        <Typography variant="h5" style={{ alignSelf: 'center' }}>
-          Thank you for your RSVP!
-        </Typography>
-      ) : (
-        <div
-          style={{
-            maxHeight: "80vh",
-            overflowY: "auto",
-            boxSizing: "border-box",
-            paddingRight: "20px",
-          }}
-        >
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormControl variant="outlined" margin="normal" fullWidth>
-              <InputLabel>Number of Guests</InputLabel>
-              <Select
-                value={numOfGuests}
-                onChange={(e) => setNumOfGuests(e.target.value)}
-                label="Number of Guests"
-              >
-                {[1, 2, 3, 4].map((num) => (
-                  <MenuItem key={num} value={num}>
-                    {num}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      {/* <NavBar/>   */}
+      <div
+        style={{
+          width: "90%",
+          display: "flex",
+          flexDirection: "column",
+          marginTop: "10%",
+        }}
+      >
+        {!isSubmitted && (
+          <Typography variant="h4" gutterBottom>
+            RSVP
+          </Typography>
+        )}
+        {isSubmitted ? (
+          <Typography variant="h5" style={{ alignSelf: "center" }}>
+            Thank you for your RSVP!
+          </Typography>
+        ) : (
+          <div
+            style={{
+              maxHeight: "80vh",
+              overflowY: "auto",
+              boxSizing: "border-box",
+              paddingRight: "20px",
+            }}
+          >
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <FormControl variant="outlined" margin="normal" fullWidth>
+                <InputLabel>Number of Guests</InputLabel>
+                <Select
+                  value={numOfGuests}
+                  onChange={(e) => setNumOfGuests(e.target.value)}
+                  label="Number of Guests"
+                >
+                  {[1, 2, 3, 4].map((num) => (
+                    <MenuItem key={num} value={num}>
+                      {num}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
 
-            {Array.from({ length: numOfGuests }).map((_, index) => (
-              <div key={index}>
-                <Typography variant="h6" gutterBottom>
-                  Guest {index + 1}
-                </Typography>
+              {Array.from({ length: numOfGuests }).map((_, index) => (
+                <div key={index}>
+                  <Typography variant="h6" gutterBottom>
+                    Guest {index + 1}
+                  </Typography>
 
-                <TextField
-                  label={`Guest ${index + 1} First Name`}
-                  {...register(`guest${index + 1}FirstName`, {
-                    required: `First Name for Guest ${index + 1} is required`,
-                  })}
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
-
-                <TextField
-                  label={`Guest ${index + 1} Last Name`}
-                  {...register(`guest${index + 1}LastName`, {
-                    required: `Last Name for Guest ${index + 1} is required`,
-                  })}
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
-
-                <FormControl variant="outlined" margin="normal" fullWidth>
-                  <InputLabel>Dinner Choice for Guest {index + 1}</InputLabel>
-                  <Controller
-                    name={`guest${index + 1}DinnerChoice`}
-                    control={control}
-                    defaultValue="chicken"
-                    render={({ field }) => (
-                      <Select
-                        label={`Dinner Choice for Guest ${index + 1}`}
-                        {...field}
-                      >
-                        <MenuItem value="chicken">Chicken</MenuItem>
-                        <MenuItem value="beef">Beef</MenuItem>
-                      </Select>
-                    )}
+                  <TextField
+                    label={`Guest ${index + 1} First Name`}
+                    {...register(`guest${index + 1}FirstName`, {
+                      required: `First Name for Guest ${index + 1} is required`,
+                    })}
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
                   />
-                </FormControl>
 
-                <TextField
-                  label={`Song Recommendation for Guest ${index + 1}`}
-                  {...register(`guest${index + 1}SongRecommendation`)}
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
-              </div>
-            ))}
+                  <TextField
+                    label={`Guest ${index + 1} Last Name`}
+                    {...register(`guest${index + 1}LastName`, {
+                      required: `Last Name for Guest ${index + 1} is required`,
+                    })}
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                  />
 
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              style={{ marginTop: "16px" }}
-              disabled={!isValid}
-            >
-              Submit
-            </Button>
-          </form>
-        </div>
-      )}
-    </div>
+                  <FormControl variant="outlined" margin="normal" fullWidth>
+                    <InputLabel>Dinner Choice for Guest {index + 1}</InputLabel>
+                    <Controller
+                      name={`guest${index + 1}DinnerChoice`}
+                      control={control}
+                      defaultValue="chicken"
+                      render={({ field }) => (
+                        <Select
+                          label={`Dinner Choice for Guest ${index + 1}`}
+                          {...field}
+                        >
+                          <MenuItem value="chicken">Chicken</MenuItem>
+                          <MenuItem value="beef">Beef</MenuItem>
+                        </Select>
+                      )}
+                    />
+                  </FormControl>
+
+                  <TextField
+                    label={`Song Recommendation for Guest ${index + 1}`}
+                    {...register(`guest${index + 1}SongRecommendation`)}
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                  />
+                </div>
+              ))}
+
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                style={{ marginTop: "16px" }}
+                disabled={!isValid}
+              >
+                Submit
+              </Button>
+            </form>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

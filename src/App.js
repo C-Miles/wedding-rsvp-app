@@ -4,17 +4,15 @@ import NavigationWrapper from "./NavigationWrapper";
 import { Container } from "@mui/material";
 
 import LandingPage from "./LandingPage";
+import ParkingPage from "./ParkingPage";
 import RSVP from "./RSVP";
+import TravelPage from "./TravelPage";
 import VenuePage from "./VenuePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <NavigationWrapper>
-        <LandingPage />
-      </NavigationWrapper>
-    ),
+    element: <LandingPage />,
   },
   {
     path: "/rsvp",
@@ -29,6 +27,22 @@ const router = createBrowserRouter([
     element: (
       <NavigationWrapper>
         <VenuePage />
+      </NavigationWrapper>
+    ),
+  },
+  {
+    path: "/travel",
+    element: (
+      <NavigationWrapper>
+        <TravelPage />
+      </NavigationWrapper>
+    ),
+  },
+  {
+    path: "/parking",
+    element: (
+      <NavigationWrapper>
+        <ParkingPage />
       </NavigationWrapper>
     ),
   },

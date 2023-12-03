@@ -1,13 +1,13 @@
 import React from "react";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Link from '@mui/material/Link';
-import WebIcon from '@mui/icons-material/Web';
-import PhoneIcon from '@mui/icons-material/Phone';
-import DirectionsIcon from '@mui/icons-material/Directions';
-
+import Link from "@mui/material/Link";
+import WebIcon from "@mui/icons-material/Web";
+import PhoneIcon from "@mui/icons-material/Phone";
+import DirectionsIcon from "@mui/icons-material/Directions";
 
 import NorthFourth from "./images/north_fourth.jpeg";
 
@@ -25,16 +25,16 @@ function VenuePage() {
       }}
     >
       <Typography
-        variant={isSmallScreen ? "h4" : "h3"}
+        align="center"
         component="h1"
         gutterBottom
-        align="center"
-        style={{ marginTop: "5%" }}
+        style={{ marginTop: "3%" }}
+        variant={isSmallScreen ? "h4" : "h3"}
       >
         Post 4 at North Fourth Corridor
       </Typography>
       <Box
-        style={{ textAlign: "center", width: isSmallScreen ? "70%" : "95vh" }}
+        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "95vh" }}
       >
         <img
           alt="Venue"
@@ -46,22 +46,65 @@ function VenuePage() {
         </Typography>
       </Box>
 
-
-      <div style={{ marginTop: '10px', marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
-
-        <Typography variant="subtitle1" gutterBottom style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
-          <Link href="https://www.google.com/maps/dir/?api=1&destination=Post+4+North+Fourth" underline="hover" style={{ display: 'flex', alignItems: 'center' }}>
-            Get Directions <DirectionsIcon style={{ marginLeft: '5px' }} />
+      <div
+        style={{
+          marginTop: "10px",
+          marginBottom: "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          gutterBottom
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "15px",
+          }}
+        >
+          <Link
+            href="https://www.google.com/maps/dir/?api=1&destination=Post+4+North+Fourth"
+            underline="hover"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Get Directions <DirectionsIcon style={{ marginLeft: "5px" }} />
           </Link>
         </Typography>
-        <Typography variant="subtitle1" gutterBottom style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
-          <Link href="https://north4thcorridor.com/post-4/" underline="hover" style={{ display: 'flex', alignItems: 'center' }}>
-            Venue Website <WebIcon style={{ marginLeft: '5px' }} />
+        <Typography
+          variant="subtitle1"
+          gutterBottom
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "15px",
+          }}
+        >
+          <Link
+            href="https://north4thcorridor.com/post-4/"
+            underline="hover"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Venue Website <WebIcon style={{ marginLeft: "5px" }} />
           </Link>
         </Typography>
-        <Typography variant="subtitle1" gutterBottom style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
-          <Link href="tel:+13807997499" underline="hover" style={{ display: 'flex', alignItems: 'center' }}>
-            Call Venue <PhoneIcon style={{ marginLeft: '5px' }} />
+        <Typography
+          variant="subtitle1"
+          gutterBottom
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "15px",
+          }}
+        >
+          <Link
+            href="tel:+13807997499"
+            underline="hover"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Call Venue <PhoneIcon style={{ marginLeft: "5px" }} />
           </Link>
         </Typography>
       </div>
