@@ -200,6 +200,7 @@ function RSVP() {
                         >
                           <MenuItem value="chicken">Chicken</MenuItem>
                           <MenuItem value="beef">Beef</MenuItem>
+                          <MenuItem value="vegetarian">Vegetarian</MenuItem>
                         </Select>
                       )}
                     />
