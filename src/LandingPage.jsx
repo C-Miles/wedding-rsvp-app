@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Alaska from "./images/alaska.jpg";
 import Kyoto from "./images/kyoto.jpg";
 
-const CORRECT_PASSWORD = "3M3r4ld5##";
+const CORRECT_PASSWORD = "LOVEBUG";
 
 function LandingPage() {
   const theme = useTheme();
