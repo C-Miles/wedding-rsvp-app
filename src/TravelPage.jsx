@@ -47,16 +47,8 @@ function TravelPage() {
       url: "https://www.sonesta.com/sonesta-hotels-resorts/oh/columbus/sonesta-columbus-downtown",
     },
     {
-      name: "AC Hotel Columbus Downtown",
-      url: "https://www.marriott.com/en-us/hotels/csgac-ac-hotel-columbus-downtown-ga/overview/",
-    },
-    {
       name: "Renaissance Columbus Downtown",
       url: "https://www.marriott.com/en-us/hotels/cmhbr-renaissance-columbus-downtown-hotel/overview/",
-    },
-    {
-      name: "Red Roof Plus Columbus Downtown",
-      url: "https://www.redroof.com/property/oh/columbus/RRI262",
     },
     {
       name: "Hyatt Regency Columbus",

@@ -30,6 +30,9 @@ const NavBar = () => {
       <ListItem button onClick={() => navigate("/rsvp")}>
         <ListItemText primary="RSVP" />
       </ListItem>
+      <ListItem button onClick={() => navigate("/faq")}>
+        <ListItemText primary="FAQ" />
+      </ListItem>
       <ListItem button onClick={() => navigate("/location")}>
         <ListItemText primary="LOCATION" />
       </ListItem>
@@ -62,6 +65,9 @@ const NavBar = () => {
           <List component="nav" style={{ display: "flex" }}>
             <ListItem button onClick={() => navigate("/rsvp")}>
               <ListItemText primary="RSVP" />
+            </ListItem>
+            <ListItem button onClick={() => navigate("/faq")}>
+              <ListItemText primary="FAQ" />
             </ListItem>
             <ListItem button onClick={() => navigate("/location")}>
               <ListItemText primary="LOCATION" />

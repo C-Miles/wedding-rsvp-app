@@ -4,6 +4,7 @@ import NavigationWrapper from "./NavigationWrapper";
 import { Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import FAQPage from "./FAQPage";
 import LandingPage from "./LandingPage";
 import ParkingPage from "./ParkingPage";
 import RSVP from "./RSVP";
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
         <RSVP />
       </NavigationWrapper>
     ),
+  },
+  {
+    path: "/faq",
+    element: (
+      <NavigationWrapper>
+      <FAQPage />
+    </NavigationWrapper>
+    )
   },
   {
     path: "/location",
