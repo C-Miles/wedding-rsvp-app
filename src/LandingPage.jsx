@@ -10,10 +10,10 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import Alaska from "./images/alaska.jpg";
-import Kyoto from "./images/kyoto.jpg";
+import LandingPageLandscape from "./images/landing_page_landscape.jpg";
+import LandingPagePortrait from "./images/landing_page_portrait.jpg";
 
-const CORRECT_PASSWORD = "LOVEBUG";
+const CORRECT_PASSWORD = "twomiles";
 
 function LandingPage() {
   const theme = useTheme();
@@ -25,7 +25,9 @@ function LandingPage() {
   const [wrongPassword, setWrongPassword] = React.useState(false);
 
   const onSubmit = (data) => {
-    if (data.password !== CORRECT_PASSWORD) {
+    const enteredPassword = data.password.toLowerCase();
+
+    if (enteredPassword !== CORRECT_PASSWORD) {
       setWrongPassword(true);
       return;
     }
@@ -33,31 +35,72 @@ function LandingPage() {
     setWrongPassword(false);
     navigate("/rsvp");
   };
+
   return (
     <div
       style={{
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        marginTop: '2%',
       }}
     >
-      <Box width={isSmallScreen ? "70%" : "60%"} marginBottom={3} style={{display: "flex", alignItems: 'center', flexDirection: 'column'}}>
+      <Box
+        width={isSmallScreen ? "70%" : "100%"}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          boxSizing: "border-box",
+          position: "relative",
+        }}
+      >
         <Typography
           variant={isSmallScreen ? "h4" : "h2"}
           component="h1"
           gutterBottom
           align="center"
+          style={{
+            color: "white",
+            position: "absolute",
+            top: isSmallScreen ? '12%' : "3%",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
+            fontSize: isSmallScreen ? 26 : 45,
+            width: "100%",
+          }}
         >
-          Christopher & Casey
+          CHRISTOPHER & CASEY
+        </Typography>
+        <Typography
+          variant={"subtitle1"}
+          gutterBottom
+          align="center"
+          style={{
+            color: "white",
+            position: "absolute",
+            top: isSmallScreen ? "17%" : "12%",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
+            fontSize: isSmallScreen ? 12 : 18,
+            width: "100%",
+          }}
+        >
+          FEBRUARY 10, 2024 * COLUMBUS, OH
         </Typography>
         <img
-          src={isSmallScreen ? Kyoto : Alaska}
+          src={isSmallScreen ? LandingPagePortrait : LandingPageLandscape}
           alt="Portrait"
-          style={{ maxWidth: isSmallScreen ? "100%" : '75%', height: "auto" }}
+          style={{
+            width: isSmallScreen ? "auto" : "100vw",
+            height: isSmallScreen ? "100vh" : "auto",
+            objectFit: "cover",
+            objectPosition: "center",
+            maxHeight: isSmallScreen && '90vh'
+          }}
         />
       </Box>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        style={{ position: "absolute", bottom: isSmallScreen ? '25%' : "1%", }}
+      >
         {wrongPassword && (
           <Alert onClose={() => setWrongPassword(false)} severity="error">
             Wrong Password!
@@ -66,22 +109,26 @@ function LandingPage() {
 
         <Box
           display="flex"
-          flexDirection={isSmallScreen ? "column" : "row"}
           alignItems="center"
           marginBottom={5}
+          style={{ transform: isSmallScreen ? 'scale(0.8)' : 'scale(1)' }}
         >
           <Box
-            marginRight={isSmallScreen ? 0 : 2}
-            marginBottom={isSmallScreen ? 2 : 0}
+            marginRight={2}
           >
             <Input
-              placeholder="Invitation Password"
+              placeholder="  Invitation Password"
               type="password"
               {...register("password", { required: "Password is required." })}
               required
+              style={{ backgroundColor: "#ece3d2", color: "black" }}
             />
           </Box>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            type="submit"
+            style={{ backgroundColor: "#ece3d2", color: "black" }}
+          >
             Proceed
           </Button>
         </Box>
