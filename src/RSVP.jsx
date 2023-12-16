@@ -16,7 +16,8 @@ import {
   Typography,
 } from "@mui/material";
 
-import KissKiss from "./images/kiss_kiss.jpg";
+import RSVPLandscape from "./images/rsvp_landscape.jpg";
+import RSVPPortrait from "./images/rsvp_portrait.jpg";
 
 function RSVP() {
   const theme = useTheme();
@@ -92,15 +93,13 @@ function RSVP() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <div
         style={{
-          width: "90%",
           display: "flex",
           flexDirection: "column",
-          marginTop: "3%",
-          marginBottom: "30%",
         }}
       >
         {!isSubmitted && (
@@ -115,23 +114,30 @@ function RSVP() {
               flexDirection: "column",
               alignContent: "center",
               justifyContent: "center",
-              marginBottom: "5%",
+              alignItems: 'center',
             }}
           >
             <Typography
               variant={isSmallScreen ? "h6" : "h4"}
-              style={{ alignSelf: "center", marginBottom: "15px" }}
+              style={{
+                alignSelf: "center",
+                position: "absolute",
+                color: "white",
+                top: "15%",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
+              }}
             >
               Thank you for your RSVP!
             </Typography>
 
             <img
               alt="Venue"
-              src={KissKiss}
+              src={isSmallScreen ? RSVPPortrait : RSVPLandscape}
               style={{
-                width: isSmallScreen ? "85%" : "40%",
+                width: isSmallScreen ? "85%" : "100%",
                 height: "auto",
                 alignSelf: "center",
+                // top: "8%",
               }}
             />
           </div>
@@ -141,7 +147,6 @@ function RSVP() {
               maxHeight: "80vh",
               overflowY: "auto",
               boxSizing: "border-box",
-              paddingRight: "20px",
             }}
           >
             <form onSubmit={handleSubmit(onSubmit)}>

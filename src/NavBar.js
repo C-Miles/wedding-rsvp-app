@@ -45,7 +45,7 @@ const NavBar = () => {
   return (
     <AppBar
       position="sticky"
-      style={{ width: "100%", backgroundColor: "#565869" }}
+      style={{ width: "100%", backgroundColor: "#2d2d2d" }}
     >
       <Toolbar>
         {isMobile && (
@@ -75,7 +75,14 @@ const NavBar = () => {
           </List>
         )}
       </Toolbar>
-      <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={handleDrawerToggle}
+        sx={{
+          "& .MuiDrawer-paper": { backgroundColor: "#f5f0e5" },
+        }}
+      >
         {drawer}
       </Drawer>
     </AppBar>

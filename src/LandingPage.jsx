@@ -99,7 +99,7 @@ function LandingPage() {
       </Box>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ position: "absolute", bottom: isSmallScreen ? '25%' : "1%", }}
+        style={{ position: "absolute", bottom: isSmallScreen ? '20%' : "1%", }}
       >
         {wrongPassword && (
           <Alert onClose={() => setWrongPassword(false)} severity="error">

@@ -27,6 +27,6 @@ export const db = getFirestore(app);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App style={{ backgroundColor: "#ece3d2", minHeight: "100%" }} />
+    <App style={{ backgroundColor: "#f5f0e5", minHeight: "100%" }} />
   </React.StrictMode>
 );
