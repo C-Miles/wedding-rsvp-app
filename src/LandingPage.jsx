@@ -36,14 +36,14 @@ function LandingPage() {
     navigate("/rsvp");
   };
 
-  const [textStyle, setTextStyle] = useState({
+  const [fadeEffectStyle, setFadeEffectStyle] = useState({
     opacity: 0,
     transform: 'scale(0.6)'
   });
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTextStyle({
+      setFadeEffectStyle({
         opacity: 1,
         transform: 'scale(1)',
         transition: 'opacity 1s ease, transform 1s ease'
@@ -83,7 +83,7 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
             fontSize: isSmallScreen ? 26 : 45,
             width: "100%",
-            ...textStyle
+            ...fadeEffectStyle
           }}
         >
           CHRISTOPHER & CASEY
@@ -99,7 +99,7 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
             fontSize: isSmallScreen ? 12 : 18,
             width: "100%",
-            ...textStyle
+            ...fadeEffectStyle
           }}
         >
           FEBRUARY 10, 2024 * COLUMBUS, OH
@@ -118,7 +118,7 @@ function LandingPage() {
       </Box>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ position: "absolute", bottom: isSmallScreen ? "20%" : "1%" }}
+        style={{ position: "absolute", bottom: isSmallScreen ? "20%" : "1%", ...fadeEffectStyle }}
       >
         {wrongPassword && (
           <Alert onClose={() => setWrongPassword(false)} severity="error">
