@@ -62,7 +62,7 @@ function LandingPage() {
           style={{
             color: "white",
             position: "absolute",
-            top: isSmallScreen ? '12%' : "3%",
+            top: isSmallScreen ? "12%" : "3%",
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
             fontSize: isSmallScreen ? 26 : 45,
             width: "100%",
@@ -93,13 +93,13 @@ function LandingPage() {
             height: isSmallScreen ? "100vh" : "auto",
             objectFit: "cover",
             objectPosition: "center",
-            maxHeight: isSmallScreen && '90vh'
+            maxHeight: isSmallScreen && "90vh",
           }}
         />
       </Box>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ position: "absolute", bottom: isSmallScreen ? '20%' : "1%", }}
+        style={{ position: "absolute", bottom: isSmallScreen ? "20%" : "1%" }}
       >
         {wrongPassword && (
           <Alert onClose={() => setWrongPassword(false)} severity="error">
@@ -111,11 +111,9 @@ function LandingPage() {
           display="flex"
           alignItems="center"
           marginBottom={5}
-          style={{ transform: isSmallScreen ? 'scale(0.8)' : 'scale(1)' }}
+          style={{ transform: isSmallScreen ? "scale(0.8)" : "scale(1)" }}
         >
-          <Box
-            marginRight={2}
-          >
+          <Box marginRight={2}>
             <Input
               placeholder="  Invitation Password"
               type="password"

@@ -71,6 +71,7 @@ function TravelPage() {
         flexDirection: "column",
         alignItems: "center",
         height: "100%",
+        justifyContent: "center",
       }}
     >
       <Typography
@@ -82,7 +83,13 @@ function TravelPage() {
       >
         Hotels
       </Typography>
-      <Divider style={{ width: "80%", marginBottom: "20px" }} />
+      <Divider
+        style={{
+          width: "80%",
+          marginBottom: "20px",
+          backgroundColor: "#2d2d2d",
+        }}
+      />
 
       {hotels.map((hotel, index) => (
         <Link
@@ -107,11 +114,19 @@ function TravelPage() {
       <Typography
         variant="subtitle1"
         component="h2"
+        align="center"
         gutterBottom
+        style={{ wordWrap: "break-word" }}
       >
         Conveniently located 7 miles from Downtown/Venue location
       </Typography>
-      <Divider style={{ width: "80%", marginBottom: "20px" }} />
+      <Divider
+        style={{
+          width: "80%",
+          marginBottom: "20px",
+          backgroundColor: "#2d2d2d",
+        }}
+      />
 
       <Box
         style={{ textAlign: "center", width: isSmallScreen ? "80%" : "95vh" }}

@@ -103,7 +103,11 @@ function RSVP() {
         }}
       >
         {!isSubmitted && (
-          <Typography variant="h4" gutterBottom style={{alignSelf: isSmallScreen && 'center', marginTop: '20px'}}>
+          <Typography
+            variant="h4"
+            gutterBottom
+            style={{ alignSelf: isSmallScreen && "center", marginTop: "20px" }}
+          >
             RSVP
           </Typography>
         )}
@@ -112,8 +116,8 @@ function RSVP() {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: 'center',
-              height: '100vh',
+              alignItems: "center",
+              height: "100vh",
             }}
           >
             <Typography
@@ -122,7 +126,7 @@ function RSVP() {
                 alignSelf: "center",
                 position: "absolute",
                 color: "white",
-                top: "15%",
+                top: isSmallScreen ? "20%" : "15%",
                 textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
               }}
             >
@@ -133,22 +137,28 @@ function RSVP() {
               alt="Venue"
               src={isSmallScreen ? RSVPPortrait : RSVPLandscape}
               style={{
-                width: '100%',
                 alignSelf: "center",
+                width: "100vw",
+                height: isSmallScreen ? "100vh" : "auto",
+                objectFit: "cover",
+                objectPosition: "center",
               }}
             />
           </div>
         ) : (
           <div
             style={{
+              boxSizing: "border-box",
+              display: "flex",
+              justifyContent: 'center',
               maxHeight: "80vh",
               overflowY: "auto",
-              boxSizing: "border-box",
-              alignItems: 'center',
-              display: 'flex',
             }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} style={{width: isSmallScreen && '85%', alignSelf: 'center'}}>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              style={{ width: isSmallScreen && "85%", alignSelf: "center" }}
+            >
               <FormControl variant="outlined" margin="normal" fullWidth>
                 <InputLabel>Number of Guests</InputLabel>
                 <Select
@@ -223,7 +233,7 @@ function RSVP() {
                 type="submit"
                 variant="contained"
                 color="primary"
-                style={{ marginTop: "16px" }}
+                style={{ marginTop: "16px", marginBottom: '16px' }}
                 disabled={!isValid}
               >
                 Submit
