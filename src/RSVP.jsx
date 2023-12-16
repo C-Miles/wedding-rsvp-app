@@ -103,7 +103,7 @@ function RSVP() {
         }}
       >
         {!isSubmitted && (
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom style={{alignSelf: isSmallScreen && 'center', marginTop: '20px'}}>
             RSVP
           </Typography>
         )}
@@ -112,9 +112,8 @@ function RSVP() {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignContent: "center",
-              justifyContent: "center",
               alignItems: 'center',
+              height: '100vh',
             }}
           >
             <Typography
@@ -134,10 +133,8 @@ function RSVP() {
               alt="Venue"
               src={isSmallScreen ? RSVPPortrait : RSVPLandscape}
               style={{
-                width: isSmallScreen ? "85%" : "100%",
-                height: "auto",
+                width: '100%',
                 alignSelf: "center",
-                // top: "8%",
               }}
             />
           </div>
@@ -147,9 +144,11 @@ function RSVP() {
               maxHeight: "80vh",
               overflowY: "auto",
               boxSizing: "border-box",
+              alignItems: 'center',
+              display: 'flex',
             }}
           >
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} style={{width: isSmallScreen && '85%', alignSelf: 'center'}}>
               <FormControl variant="outlined" margin="normal" fullWidth>
                 <InputLabel>Number of Guests</InputLabel>
                 <Select

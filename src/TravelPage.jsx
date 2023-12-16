@@ -130,7 +130,6 @@ function TravelPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          height: "100vh",
         }}
       >
         <Typography
@@ -182,7 +181,7 @@ function TravelPage() {
             style={{
               display: "flex",
               alignItems: "center",
-              marginBottom: "30%",
+              // marginBottom: "30%",
             }}
           >
             Call Airport <PhoneIcon style={{ marginLeft: "5px" }} />
