@@ -28,9 +28,9 @@ const router = createBrowserRouter([
     path: "/faq",
     element: (
       <NavigationWrapper>
-      <FAQPage />
-    </NavigationWrapper>
-    )
+        <FAQPage />
+      </NavigationWrapper>
+    ),
   },
   {
     path: "/location",

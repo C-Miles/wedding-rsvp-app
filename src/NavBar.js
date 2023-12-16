@@ -11,8 +11,9 @@ import {
   ListItemText,
 } from "@mui/material";
 
-import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const NavBar = () => {
@@ -27,6 +28,9 @@ const NavBar = () => {
 
   const drawer = (
     <List>
+      <ListItem button onClick={() => navigate("/")}>
+        <ListItemText primary="HOME" />
+      </ListItem>
       <ListItem button onClick={() => navigate("/rsvp")}>
         <ListItemText primary="RSVP" />
       </ListItem>
@@ -52,17 +56,29 @@ const NavBar = () => {
     >
       <Toolbar>
         {isMobile && (
-          <IconButton
-            edge="end"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
+          <>
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              color="inherit"
+              style={{ marginLeft: "15px" }}
+            >
+              MENU
+            </Typography>
+          </>
         )}
         {!isMobile && (
           <List component="nav" style={{ display: "flex" }}>
+            <ListItem button onClick={() => navigate("/")}>
+              <ListItemText primary="HOME" />
+            </ListItem>
             <ListItem button onClick={() => navigate("/rsvp")}>
               <ListItemText primary="RSVP" />
             </ListItem>

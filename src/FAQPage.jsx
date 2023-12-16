@@ -81,7 +81,7 @@ function FAQPage() {
     {
       question: "Can I take home any centerpieces/decorations?",
       answer:
-        "We ask that you please refrain from taking any of our centerpieces or decoration.",
+        "We ask that you please refrain from taking any of the centerpieces or decoration.",
     },
     {
       question:
