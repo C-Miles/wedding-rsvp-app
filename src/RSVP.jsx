@@ -152,7 +152,6 @@ function RSVP() {
               boxSizing: "border-box",
               display: "flex",
               justifyContent: 'center',
-              maxHeight: "80vh",
               overflowY: "auto",
             }}
           >
@@ -160,7 +159,7 @@ function RSVP() {
               onSubmit={handleSubmit(onSubmit)}
               style={{ width: isSmallScreen && "85%", alignSelf: "center" }}
             >
-              <FormControl variant="outlined" margin="normal" fullWidth>
+              <FormControl variant="outlined" margin="normal" fullWidth style={{ marginTop: '15px', marginBottom: '15px' }}>
                 <InputLabel>Number of Guests</InputLabel>
                 <Select
                   value={numOfGuests}
@@ -177,7 +176,7 @@ function RSVP() {
 
               {Array.from({ length: numOfGuests }).map((_, index) => (
                 <div key={index}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h6" gutterBottom style={{ marginTop: '15px', marginBottom: '15px' }}>
                     Guest {index + 1}
                   </Typography>
 
@@ -189,6 +188,7 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
+                    style={{ marginTop: '15px', marginBottom: '15px' }}
                   />
 
                   <TextField
@@ -199,9 +199,10 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
+                    style={{ marginTop: '15px', marginBottom: '15px' }}
                   />
 
-                  <FormControl variant="outlined" margin="normal" fullWidth>
+                  <FormControl variant="outlined" margin="normal" fullWidth style={{ marginTop: '15px', marginBottom: '15px' }}>
                     <InputLabel>Dinner Choice for Guest {index + 1}</InputLabel>
                     <Controller
                       name={`guest${index + 1}DinnerChoice`}
@@ -226,6 +227,7 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
+                    style={{ marginTop: '15px', marginBottom: '15px' }}
                   />
 
                   <TextField
@@ -234,6 +236,7 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
+                    style={{ marginTop: '15px', marginBottom: '15px' }}
                   />
 
                 </div>
@@ -243,7 +246,7 @@ function RSVP() {
                 type="submit"
                 variant="contained"
                 color="primary"
-                style={{ marginTop: "16px", marginBottom: '16px' }}
+                style={{ marginTop: "15px", marginBottom: '20px' }}
                 disabled={!isValid}
               >
                 Submit
