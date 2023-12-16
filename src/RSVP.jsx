@@ -51,6 +51,7 @@ function RSVP() {
         firstName: data[`guest${i + 1}FirstName`],
         lastName: data[`guest${i + 1}LastName`],
         dinnerChoice: data[`guest${i + 1}DinnerChoice`],
+        dietaryRestriction: data[`guest${i + 1}DietaryRestrictions`],
         songRecommendation: data[`guest${i + 1}SongRecommendation`],
       };
       guests.push(guest);
@@ -220,12 +221,21 @@ function RSVP() {
                   </FormControl>
 
                   <TextField
+                    label={`Dietary Restrictions for Guest ${index + 1}`}
+                    {...register(`guest${index + 1}DietaryRestrictions`)}
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                  />
+
+                  <TextField
                     label={`Song Recommendation for Guest ${index + 1}`}
                     {...register(`guest${index + 1}SongRecommendation`)}
                     variant="outlined"
                     margin="normal"
                     fullWidth
                   />
+
                 </div>
               ))}
 
