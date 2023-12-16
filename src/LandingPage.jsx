@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
@@ -36,6 +36,23 @@ function LandingPage() {
     navigate("/rsvp");
   };
 
+  const [textStyle, setTextStyle] = useState({
+    opacity: 0,
+    transform: 'scale(0.6)'
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTextStyle({
+        opacity: 1,
+        transform: 'scale(1)',
+        transition: 'opacity 1s ease, transform 1s ease'
+      });
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       style={{
@@ -66,6 +83,7 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
             fontSize: isSmallScreen ? 26 : 45,
             width: "100%",
+            ...textStyle
           }}
         >
           CHRISTOPHER & CASEY
@@ -81,6 +99,7 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
             fontSize: isSmallScreen ? 12 : 18,
             width: "100%",
+            ...textStyle
           }}
         >
           FEBRUARY 10, 2024 * COLUMBUS, OH
