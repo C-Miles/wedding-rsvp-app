@@ -2,12 +2,12 @@ import React from "react";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import WebIcon from "@mui/icons-material/Web";
-import PhoneIcon from "@mui/icons-material/Phone";
+
+import { Box, Divider, Link, Typography } from "@mui/material";
+
 import DirectionsIcon from "@mui/icons-material/Directions";
+import PhoneIcon from "@mui/icons-material/Phone";
+import WebIcon from "@mui/icons-material/Web";
 
 import NorthFourth from "./images/north_fourth.jpeg";
 
@@ -33,13 +33,26 @@ function VenuePage() {
       >
         Post 4 at North Fourth Corridor
       </Typography>
+
+      <Divider
+        style={{
+          width: "80%",
+          marginBottom: "20px",
+          backgroundColor: "#2d2d2d",
+        }}
+      />
+
       <Box
-        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "95vh" }}
+        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "800px" }}
       >
         <img
           alt="Venue"
           src={NorthFourth}
-          style={{ width: "100%", height: "auto" }}
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            height: "auto",
+            width: "100%",
+          }}
         />
         <Typography variant="subtitle1" style={{ marginTop: "10px" }}>
           580 N 4th St, Columbus, OH 43215

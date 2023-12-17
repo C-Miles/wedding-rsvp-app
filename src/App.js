@@ -8,6 +8,7 @@ import FAQPage from "./FAQPage";
 import LandingPage from "./LandingPage";
 import ParkingPage from "./ParkingPage";
 import RSVP from "./RSVP";
+import StoryPage from "./StoryPage";
 import TravelPage from "./TravelPage";
 import VenuePage from "./VenuePage";
 
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
     element: (
       <NavigationWrapper>
         <FAQPage />
+      </NavigationWrapper>
+    ),
+  },
+  {
+    path: "/story",
+    element: (
+      <NavigationWrapper>
+        <StoryPage />
       </NavigationWrapper>
     ),
   },

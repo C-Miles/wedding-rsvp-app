@@ -3,10 +3,14 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Divider,
+  Typography,
+} from "@mui/material";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import FAQLandscape from "./images/faq_landscape.jpg";
@@ -85,7 +89,7 @@ function FAQPage() {
     },
     {
       question:
-      "Who should I contact for further questions, site issues, or if I need to cancel my RSVP?",
+        "Who should I contact for further questions, site issues, or if I need to cancel my RSVP?",
       answer:
         "Feel free to contact either Casey at (304) 654-6031 or Chris/Miles at (304) 654-1215",
     },
@@ -102,6 +106,22 @@ function FAQPage() {
         margin: "0 auto",
       }}
     >
+      <Typography
+        align="center"
+        component="h1"
+        gutterBottom
+        style={{ marginTop: "3%" }}
+        variant={isSmallScreen ? "h4" : "h3"}
+      >
+        F.A.Q.s
+      </Typography>
+      <Divider
+        style={{
+          width: "80%",
+          marginBottom: "20px",
+          backgroundColor: "#2d2d2d",
+        }}
+      />
       <img
         src={isSmallScreen ? FAQPortrait : FAQLandscape}
         alt="Portrait"
@@ -111,7 +131,7 @@ function FAQPage() {
           objectFit: "cover",
           objectPosition: "center bottom",
           maxHeight: isSmallScreen && "90vh",
-          marginTop: isSmallScreen ? -80 : -30,
+          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
         }}
       />
       {faqs.map((faq, index) => (

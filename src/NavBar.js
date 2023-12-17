@@ -28,14 +28,14 @@ const NavBar = () => {
 
   const drawer = (
     <List>
-      <ListItem button onClick={() => navigate("/")}>
-        <ListItemText primary="HOME" />
-      </ListItem>
       <ListItem button onClick={() => navigate("/rsvp")}>
         <ListItemText primary="RSVP" />
       </ListItem>
       <ListItem button onClick={() => navigate("/faq")}>
         <ListItemText primary="FAQ" />
+      </ListItem>
+      <ListItem button onClick={() => navigate("/story")}>
+        <ListItemText primary="OUR STORY" />
       </ListItem>
       <ListItem button onClick={() => navigate("/location")}>
         <ListItemText primary="LOCATION" />
@@ -75,15 +75,24 @@ const NavBar = () => {
           </>
         )}
         {!isMobile && (
-          <List component="nav" style={{ display: "flex" }}>
-            <ListItem button onClick={() => navigate("/")}>
-              <ListItemText primary="HOME" />
-            </ListItem>
+          <List
+            component="nav"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
             <ListItem button onClick={() => navigate("/rsvp")}>
               <ListItemText primary="RSVP" />
             </ListItem>
             <ListItem button onClick={() => navigate("/faq")}>
               <ListItemText primary="FAQ" />
+            </ListItem>
+            <ListItem button onClick={() => navigate("/story")}>
+              <ListItemText
+                primary="OUR STORY"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                }}
+              />
             </ListItem>
             <ListItem button onClick={() => navigate("/location")}>
               <ListItemText primary="LOCATION" />

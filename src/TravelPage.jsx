@@ -3,12 +3,10 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import Box from "@mui/material/Box";
+import { Box, Divider, Link, Typography } from "@mui/material";
+
 import DirectionsIcon from "@mui/icons-material/Directions";
-import Divider from "@mui/material/Divider";
-import Link from "@mui/material/Link";
 import PhoneIcon from "@mui/icons-material/Phone";
-import Typography from "@mui/material/Typography";
 import WebIcon from "@mui/icons-material/Web";
 
 import JohnGlenn from "./images/john_glenn.avif";
@@ -121,30 +119,34 @@ function TravelPage() {
       />
 
       <Box
-        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "95vh" }}
+        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "800px" }}
       >
         <img
           src={JohnGlenn}
           alt="airport"
-          style={{ width: "100%", height: "auto" }}
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            height: "auto",
+            width: "100%",
+          }}
         />
       </Box>
 
       <div
         style={{
-          marginTop: "10px",
-          marginBottom: "20px",
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          marginBottom: "20px",
+          marginTop: "10px",
         }}
       >
         <Typography
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
+            display: "flex",
             marginBottom: "15px",
           }}
         >
@@ -188,7 +190,6 @@ function TravelPage() {
             style={{
               display: "flex",
               alignItems: "center",
-              // marginBottom: "30%",
             }}
           >
             Call Airport <PhoneIcon style={{ marginLeft: "5px" }} />

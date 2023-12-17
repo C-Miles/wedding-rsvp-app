@@ -2,8 +2,8 @@ import React from "react";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+
+import { Box, Divider, Typography } from "@mui/material";
 
 import ParkingMap from "./images/parking_map.png";
 
@@ -30,13 +30,25 @@ function ParkingPage() {
         Post 4 Parking Map
       </Typography>
 
+      <Divider
+        style={{
+          width: "80%",
+          marginBottom: "20px",
+          backgroundColor: "#2d2d2d",
+        }}
+      />
+
       <Box
-        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "95vh" }}
+        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "800px" }}
       >
         <img
           alt="Map of parking lot"
           src={ParkingMap}
-          style={{ width: "100%", height: "auto" }}
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            height: "auto",
+            width: "100%",
+          }}
         />
 
         <Typography variant="subtitle2" style={{ marginTop: "10px" }}>

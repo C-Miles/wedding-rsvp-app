@@ -8,6 +8,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { Controller, useForm } from "react-hook-form";
 import {
   Button,
+  Divider,
   FormControl,
   InputLabel,
   MenuItem,
@@ -122,27 +123,33 @@ function RSVP() {
             }}
           >
             <Typography
-              variant={isSmallScreen ? "h6" : "h4"}
-              style={{
-                alignSelf: "center",
-                position: "absolute",
-                color: "white",
-                top: isSmallScreen ? "20%" : "15%",
-                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
-              }}
+              align="center"
+              component="h1"
+              gutterBottom
+              style={{ marginTop: "3%" }}
+              variant={isSmallScreen ? "h4" : "h3"}
             >
               Thank you for your RSVP!
             </Typography>
+
+            <Divider
+              style={{
+                width: "80%",
+                marginBottom: "20px",
+                backgroundColor: "#2d2d2d",
+              }}
+            />
 
             <img
               alt="Venue"
               src={isSmallScreen ? RSVPPortrait : RSVPLandscape}
               style={{
                 alignSelf: "center",
-                width: "100vw",
+                boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
                 height: isSmallScreen ? "100vh" : "auto",
                 objectFit: "cover",
                 objectPosition: "center",
+                width: isSmallScreen ? "100vw" : "800px",
               }}
             />
           </div>
@@ -151,7 +158,7 @@ function RSVP() {
             style={{
               boxSizing: "border-box",
               display: "flex",
-              justifyContent: 'center',
+              justifyContent: "center",
               overflowY: "auto",
             }}
           >
@@ -159,7 +166,12 @@ function RSVP() {
               onSubmit={handleSubmit(onSubmit)}
               style={{ width: isSmallScreen && "85%", alignSelf: "center" }}
             >
-              <FormControl variant="outlined" margin="normal" fullWidth style={{ marginTop: '15px', marginBottom: '15px' }}>
+              <FormControl
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                style={{ marginTop: "15px", marginBottom: "15px" }}
+              >
                 <InputLabel>Number of Guests</InputLabel>
                 <Select
                   value={numOfGuests}
@@ -176,7 +188,11 @@ function RSVP() {
 
               {Array.from({ length: numOfGuests }).map((_, index) => (
                 <div key={index}>
-                  <Typography variant="h6" gutterBottom style={{ marginTop: '15px', marginBottom: '15px' }}>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
+                  >
                     Guest {index + 1}
                   </Typography>
 
@@ -188,7 +204,7 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    style={{ marginTop: '15px', marginBottom: '15px' }}
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
                   />
 
                   <TextField
@@ -199,10 +215,15 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    style={{ marginTop: '15px', marginBottom: '15px' }}
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
                   />
 
-                  <FormControl variant="outlined" margin="normal" fullWidth style={{ marginTop: '15px', marginBottom: '15px' }}>
+                  <FormControl
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
+                  >
                     <InputLabel>Dinner Choice for Guest {index + 1}</InputLabel>
                     <Controller
                       name={`guest${index + 1}DinnerChoice`}
@@ -227,7 +248,7 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    style={{ marginTop: '15px', marginBottom: '15px' }}
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
                   />
 
                   <TextField
@@ -236,9 +257,8 @@ function RSVP() {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    style={{ marginTop: '15px', marginBottom: '15px' }}
+                    style={{ marginTop: "15px", marginBottom: "15px" }}
                   />
-
                 </div>
               ))}
 
@@ -246,7 +266,7 @@ function RSVP() {
                 type="submit"
                 variant="contained"
                 color="primary"
-                style={{ marginTop: "15px", marginBottom: '20px' }}
+                style={{ marginTop: "15px", marginBottom: "20px" }}
                 disabled={!isValid}
               >
                 Submit
