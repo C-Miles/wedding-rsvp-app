@@ -18,10 +18,11 @@ function FAQPage() {
   return (
     <div
       style={{
-        display: "flex",
         alignItems: "center",
+        display: "flex",
         flexDirection: "column",
         height: "100%",
+        paddingBottom: '30px',
       }}
     >
       <Typography
@@ -36,9 +37,9 @@ function FAQPage() {
 
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
 
@@ -46,20 +47,20 @@ function FAQPage() {
         src={isSmallScreen ? StoryPortrait : StoryLandscape}
         alt="Portrait"
         style={{
-          width: isSmallScreen ? "auto" : "800px",
+          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
           height: isSmallScreen ? "70vh" : "auto",
+          maxHeight: isSmallScreen && "90vh",
           objectFit: "cover",
           objectPosition: "center bottom",
-          maxHeight: isSmallScreen && "90vh",
-          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+          width: isSmallScreen ? "auto" : "800px",
         }}
       />
 
       <Paper
         style={{
-          padding: "20px",
-          maxWidth: isSmallScreen ? "80%" : "760px",
           margin: "30px auto",
+          maxWidth: isSmallScreen ? "80%" : "760px",
+          padding: "20px",
         }}
       >
         <Typography variant="body1" paragraph>
@@ -104,35 +105,34 @@ function FAQPage() {
       </Paper>
       <div
         style={{
+          alignItems: "center",
           display: "flex",
           flexDirection: isSmallScreen ? "column" : "row",
-          alignItems: "center",
           justifyContent: "space-between",
           maxWidth: isSmallScreen ? "87%" : "800px",
-          marginBottom: "25px",
         }}
       >
         <img
           src={SakuraGarden}
           alt="Sakura Garden"
           style={{
+            backgroundColor: paperBackgroundColor,
             boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
             marginBottom: isSmallScreen && '30px',
             objectFit: "cover",
-            width: isSmallScreen ? "100%" : "40%",
             padding: "5px",
-            backgroundColor: paperBackgroundColor,
+            width: isSmallScreen ? "100%" : "40%",
           }}
         />
         <img
           src={Ring}
           alt="Ring"
           style={{
+            backgroundColor: paperBackgroundColor,
             boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
             objectFit: "cover",
-            width: isSmallScreen ? "100%" : "40%",
             padding: "5px",
-            backgroundColor: paperBackgroundColor,
+            width: isSmallScreen ? "100%" : "40%",
           }}
         />
       </div>

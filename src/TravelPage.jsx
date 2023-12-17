@@ -57,11 +57,12 @@ function TravelPage() {
   return (
     <div
       style={{
+        alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         height: "100%",
         justifyContent: "center",
+        paddingBottom: '30px',
       }}
     >
       <Typography
@@ -75,9 +76,9 @@ function TravelPage() {
       </Typography>
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
 
@@ -112,9 +113,9 @@ function TravelPage() {
       </Typography>
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
 
@@ -137,7 +138,6 @@ function TravelPage() {
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          marginBottom: "25px",
           marginTop: "10px",
         }}
       >
@@ -162,8 +162,8 @@ function TravelPage() {
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
+            display: "flex",
             marginBottom: "15px",
           }}
         >
@@ -179,8 +179,8 @@ function TravelPage() {
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
+            display: "flex",
             marginBottom: "15px",
           }}
         >
@@ -188,8 +188,8 @@ function TravelPage() {
             href="tel:+16142394000"
             underline="hover"
             style={{
-              display: "flex",
               alignItems: "center",
+              display: "flex",
             }}
           >
             Call Airport <PhoneIcon style={{ marginLeft: "5px" }} />

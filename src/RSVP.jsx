@@ -92,17 +92,18 @@ function RSVP() {
   return (
     <div
       style={{
+        alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
+        paddingBottom: '30px'
       }}
     >
       <div
         style={{
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
         }}
       >
         {!isSubmitted && (
@@ -118,9 +119,9 @@ function RSVP() {
             </Typography>
             <Divider
               style={{
-                width: "80%",
-                marginBottom: "25px",
                 backgroundColor: "#2d2d2d",
+                marginBottom: "25px",
+                width: "80%",
               }}
             />
           </>
@@ -128,9 +129,9 @@ function RSVP() {
         {isSubmitted ? (
           <div
             style={{
+              alignItems: "center",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
               height: "100vh",
             }}
           >
@@ -146,9 +147,9 @@ function RSVP() {
 
             <Divider
               style={{
-                width: "80%",
-                marginBottom: "25px",
                 backgroundColor: "#2d2d2d",
+                marginBottom: "25px",
+                width: "80%",
               }}
             />
 
@@ -278,7 +279,7 @@ function RSVP() {
                 type="submit"
                 variant="contained"
                 color="primary"
-                style={{ marginTop: "15px", marginBottom: "20px" }}
+                style={{ marginTop: "15px" }}
                 disabled={!isValid}
               >
                 Submit

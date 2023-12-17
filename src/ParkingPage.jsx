@@ -14,10 +14,11 @@ function ParkingPage() {
   return (
     <div
       style={{
-        display: "flex",
         alignItems: "center",
+        display: "flex",
         flexDirection: "column",
         height: "100%",
+        paddingBottom: '30px',
       }}
     >
       <Typography
@@ -32,9 +33,9 @@ function ParkingPage() {
 
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
 

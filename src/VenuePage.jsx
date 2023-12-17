@@ -18,10 +18,11 @@ function VenuePage() {
   return (
     <div
       style={{
-        display: "flex",
         alignItems: "center",
+        display: "flex",
         flexDirection: "column",
         height: "100%",
+        padding: "30px",
       }}
     >
       <Typography
@@ -36,9 +37,9 @@ function VenuePage() {
 
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
 
@@ -61,19 +62,18 @@ function VenuePage() {
 
       <div
         style={{
-          marginTop: "10px",
-          marginBottom: "25px",
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          marginTop: "10px",
         }}
       >
         <Typography
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
+            display: "flex",
             marginBottom: "15px",
           }}
         >
@@ -89,8 +89,8 @@ function VenuePage() {
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
+            display: "flex",
             marginBottom: "15px",
           }}
         >
@@ -106,9 +106,8 @@ function VenuePage() {
           variant="subtitle1"
           gutterBottom
           style={{
-            display: "flex",
             alignItems: "center",
-            marginBottom: "30%",
+            display: "flex",
           }}
         >
           <Link

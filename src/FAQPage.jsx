@@ -98,12 +98,13 @@ function FAQPage() {
   return (
     <div
       style={{
+        alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
-        width: isSmallScreen ? "85%" : "auto",
         margin: "0 auto",
+        paddingBottom: '30px',
+        width: isSmallScreen ? "85%" : "auto",
       }}
     >
       <Typography
@@ -117,30 +118,30 @@ function FAQPage() {
       </Typography>
       <Divider
         style={{
-          width: "80%",
-          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
         }}
       />
       <img
         src={isSmallScreen ? FAQPortrait : FAQLandscape}
         alt="Portrait"
         style={{
-          width: isSmallScreen ? "auto" : "800px",
+          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
           height: isSmallScreen ? "70vh" : "auto",
+          maxHeight: isSmallScreen && "90vh",
           objectFit: "cover",
           objectPosition: "center bottom",
-          maxHeight: isSmallScreen && "90vh",
-          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+          width: isSmallScreen ? "auto" : "800px",
         }}
       />
       {faqs.map((faq, index) => (
         <Accordion
           key={index}
           style={{
-            width: "100%",
-            maxWidth: "800px",
             margin: index === 0 ? "30px auto 10px" : "10px auto",
+            maxWidth: "800px",
+            width: "100%",
           }}
         >
           <AccordionSummary
