@@ -5,12 +5,15 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { Divider, Paper, Typography } from "@mui/material";
 
+import Ring from "./images/ring.jpg";
+import SakuraGarden from "./images/sakura_garden.jpg";
 import StoryLandscape from "./images/story_landscape.jpg";
 import StoryPortrait from "./images/story_portrait.jpg";
 
 function FAQPage() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const paperBackgroundColor = theme.palette.background.paper;
 
   return (
     <div
@@ -34,7 +37,7 @@ function FAQPage() {
       <Divider
         style={{
           width: "80%",
-          marginBottom: "20px",
+          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
         }}
       />
@@ -56,7 +59,6 @@ function FAQPage() {
         style={{
           padding: "20px",
           maxWidth: isSmallScreen ? "80%" : "760px",
-          // maxWidth: isSmallScreen ? "80%" : "80%",
           margin: "30px auto",
         }}
       >
@@ -100,6 +102,40 @@ function FAQPage() {
           straight out of a fairytale!
         </Typography>
       </Paper>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isSmallScreen ? "column" : "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          maxWidth: isSmallScreen ? "87%" : "800px",
+          marginBottom: "25px",
+        }}
+      >
+        <img
+          src={SakuraGarden}
+          alt="Sakura Garden"
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            marginBottom: isSmallScreen && '30px',
+            objectFit: "cover",
+            width: isSmallScreen ? "100%" : "40%",
+            padding: "5px",
+            backgroundColor: paperBackgroundColor,
+          }}
+        />
+        <img
+          src={Ring}
+          alt="Ring"
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            objectFit: "cover",
+            width: isSmallScreen ? "100%" : "40%",
+            padding: "5px",
+            backgroundColor: paperBackgroundColor,
+          }}
+        />
+      </div>
     </div>
   );
 }

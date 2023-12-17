@@ -102,16 +102,28 @@ function RSVP() {
         style={{
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
         }}
       >
         {!isSubmitted && (
-          <Typography
-            variant="h4"
-            gutterBottom
-            style={{ alignSelf: isSmallScreen && "center", marginTop: "20px" }}
-          >
-            RSVP
-          </Typography>
+          <>
+            <Typography
+              align="center"
+              component="h1"
+              gutterBottom
+              style={{ marginTop: "3%" }}
+              variant={isSmallScreen ? "h4" : "h3"}
+            >
+              RSVP
+            </Typography>
+            <Divider
+              style={{
+                width: "80%",
+                marginBottom: "25px",
+                backgroundColor: "#2d2d2d",
+              }}
+            />
+          </>
         )}
         {isSubmitted ? (
           <div
@@ -135,7 +147,7 @@ function RSVP() {
             <Divider
               style={{
                 width: "80%",
-                marginBottom: "20px",
+                marginBottom: "25px",
                 backgroundColor: "#2d2d2d",
               }}
             />

@@ -76,7 +76,7 @@ function TravelPage() {
       <Divider
         style={{
           width: "80%",
-          marginBottom: "20px",
+          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
         }}
       />
@@ -113,7 +113,7 @@ function TravelPage() {
       <Divider
         style={{
           width: "80%",
-          marginBottom: "20px",
+          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
         }}
       />
@@ -137,7 +137,7 @@ function TravelPage() {
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          marginBottom: "20px",
+          marginBottom: "25px",
           marginTop: "10px",
         }}
       >

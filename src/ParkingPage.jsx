@@ -33,7 +33,7 @@ function ParkingPage() {
       <Divider
         style={{
           width: "80%",
-          marginBottom: "20px",
+          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
         }}
       />

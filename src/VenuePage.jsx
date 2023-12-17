@@ -37,7 +37,7 @@ function VenuePage() {
       <Divider
         style={{
           width: "80%",
-          marginBottom: "20px",
+          marginBottom: "25px",
           backgroundColor: "#2d2d2d",
         }}
       />
@@ -62,7 +62,7 @@ function VenuePage() {
       <div
         style={{
           marginTop: "10px",
-          marginBottom: "20px",
+          marginBottom: "25px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
