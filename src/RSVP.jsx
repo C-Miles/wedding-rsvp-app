@@ -177,7 +177,7 @@ function RSVP() {
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              style={{ width: isSmallScreen && "85%", alignSelf: "center" }}
+              style={{ width: isSmallScreen ? "85%" : "800px", alignSelf: "center" }}
             >
               <FormControl
                 variant="outlined"
