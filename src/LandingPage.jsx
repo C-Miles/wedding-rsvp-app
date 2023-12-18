@@ -18,6 +18,8 @@ const CORRECT_PASSWORD = "twomiles";
 function LandingPage() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isIpadPro = useMediaQuery('(min-width:1020px) and (max-width:1040px)');
+
   const { register, handleSubmit } = useForm();
 
   const navigate = useNavigate();
@@ -105,7 +107,7 @@ function LandingPage() {
           FEBRUARY 10, 2024 * COLUMBUS, OH
         </Typography>
         <img
-          src={isSmallScreen ? LandingPagePortrait : LandingPageLandscape}
+          src={(isSmallScreen || isIpadPro) ? LandingPagePortrait : LandingPageLandscape}
           alt="Portrait"
           style={{
             width: isSmallScreen ? "auto" : "100vw",

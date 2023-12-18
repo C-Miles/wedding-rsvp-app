@@ -98,7 +98,7 @@ function RSVP() {
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        minHeight: 'calc(100vh - 35px)',
         paddingBottom: '80px'
       }}
     >
