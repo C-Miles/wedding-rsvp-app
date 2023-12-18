@@ -99,7 +99,7 @@ function RSVP() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        paddingBottom: '30px'
+        paddingBottom: '80px'
       }}
     >
       <div

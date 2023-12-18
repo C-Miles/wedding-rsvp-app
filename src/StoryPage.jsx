@@ -22,7 +22,7 @@ function FAQPage() {
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        paddingBottom: '30px',
+        paddingBottom: '80px',
       }}
     >
       <Typography

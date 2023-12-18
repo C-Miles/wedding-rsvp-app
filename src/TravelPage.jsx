@@ -62,7 +62,7 @@ function TravelPage() {
         flexDirection: "column",
         height: "100%",
         justifyContent: "center",
-        paddingBottom: '30px',
+        paddingBottom: '80px',
       }}
     >
       <Typography

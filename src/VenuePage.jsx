@@ -22,7 +22,8 @@ function VenuePage() {
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        paddingBottom: "30px",
+        minHeight: 'calc(100vh - 35px)',
+        paddingBottom: '80px',
       }}
     >
       <Typography
