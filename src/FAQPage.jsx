@@ -103,6 +103,7 @@ function FAQPage() {
         flexDirection: "column",
         justifyContent: "center",
         margin: "0 auto",
+        minHeight: 'calc(100vh - 35px)',
         paddingBottom: '80px',
         width: isSmallScreen ? "85%" : "auto",
       }}
