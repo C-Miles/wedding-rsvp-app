@@ -82,8 +82,11 @@ function RSVP() {
 
       await batch.commit();
       console.log("All guests added successfully");
+
       localStorage.setItem("rsvpSubmitted", "true");
       setIsSubmitted(true);
+
+      window.scrollTo(0, 0);
     } catch (e) {
       console.error("Error adding guests: ", e);
     }
