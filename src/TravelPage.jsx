@@ -10,6 +10,8 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import WebIcon from "@mui/icons-material/Web";
 
 import JohnGlenn from "./images/john_glenn.avif";
+import SkylineLandscape from "./images/sky_line_landscape.jpeg";
+import SkyLinePortrait from "./images/sky_line_portrait.jpeg";
 
 function TravelPage() {
   const theme = useTheme();
@@ -62,7 +64,7 @@ function TravelPage() {
         flexDirection: "column",
         height: "100%",
         justifyContent: "center",
-        paddingBottom: '80px',
+        paddingBottom: "50px",
       }}
     >
       <Typography
@@ -88,6 +90,7 @@ function TravelPage() {
           href={hotel.url}
           variant="subtitle1"
           style={{ marginBottom: "15px", textDecoration: "none" }}
+          target="blank"
           underline="hover"
         >
           {hotel.name}
@@ -95,21 +98,13 @@ function TravelPage() {
       ))}
 
       <Typography
-        variant={isSmallScreen ? "h6" : "h4"}
-        component="h2"
+        align="center"
+        variant={isSmallScreen ? "h4" : "h3"}
+        component="h1"
         gutterBottom
         style={{ marginTop: "20px" }}
       >
         John Glenn International Airport
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        component="h2"
-        align="center"
-        gutterBottom
-        style={{ wordWrap: "break-word" }}
-      >
-        Conveniently located 7 miles from Downtown/Venue location
       </Typography>
       <Divider
         style={{
@@ -133,6 +128,21 @@ function TravelPage() {
         />
       </Box>
 
+      <Typography
+        variant="subtitle1"
+        component="h2"
+        align="center"
+        gutterBottom
+        style={{
+          wordWrap: "break-word",
+          marginTop: "2%",
+          width: isSmallScreen && "99%",
+          fontSize: 18,
+        }}
+      >
+        Conveniently located 7 miles from Downtown/Venue location
+      </Typography>
+
       <div
         style={{
           alignItems: "center",
@@ -154,6 +164,7 @@ function TravelPage() {
             href="https://www.google.com/maps/dir//John+Glenn+Columbus+International+Airport,+4600+International+Gateway,+Columbus,+OH+43219/@40.1242255,-83.0875063,21z/data=!4m8!4m7!1m0!1m5!1m1!1s0x883862113489cee3:0xa07d02c8c11064c1!2m2!1d-82.8871767!2d39.9999399?entry=ttu"
             underline="hover"
             style={{ display: "flex", alignItems: "center" }}
+            target="blank"
           >
             Get Directions <DirectionsIcon style={{ marginLeft: "5px" }} />
           </Link>
@@ -171,6 +182,7 @@ function TravelPage() {
             href="https://flycolumbus.com/"
             underline="hover"
             style={{ display: "flex", alignItems: "center" }}
+            target="blank"
           >
             Airport Website <WebIcon style={{ marginLeft: "5px" }} />
           </Link>
@@ -191,11 +203,67 @@ function TravelPage() {
               alignItems: "center",
               display: "flex",
             }}
+            target="blank"
           >
             Call Airport <PhoneIcon style={{ marginLeft: "5px" }} />
           </Link>
         </Typography>
       </div>
+
+      <Typography
+        align="center"
+        component="h1"
+        gutterBottom
+        style={{ marginTop: "3%" }}
+        variant={isSmallScreen ? "h4" : "h3"}
+      >
+        Experience Columbus
+      </Typography>
+      <Divider
+        style={{
+          backgroundColor: "#2d2d2d",
+          marginBottom: "25px",
+          width: "80%",
+        }}
+      />
+
+      <Box
+        style={{ textAlign: "center", width: isSmallScreen ? "80%" : "800px" }}
+      >
+        <img
+          src={isSmallScreen ? SkyLinePortrait : SkylineLandscape}
+          alt="airport"
+          style={{
+            boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+            height: "auto",
+            width: "100%",
+          }}
+        />
+      </Box>
+
+      <Typography
+        variant="subtitle1"
+        component="h2"
+        align="center"
+        gutterBottom
+        style={{
+          wordWrap: "break-word",
+          marginTop: "2%",
+          width: isSmallScreen ? "99%" : "auto",
+          fontSize: 18,
+        }}
+      >
+        Explore Columbus with ease! For curated recommendations on dining,
+        activities, and nightlife in the city, visit{" "}
+        <Link
+          href="https://www.experiencecolumbus.com/"
+          underline="hover"
+          target="blank"
+          style={{ display: "inline-flex", alignItems: "center" }}
+        >
+          Experience Columbus
+        </Link>
+      </Typography>
     </div>
   );
 }

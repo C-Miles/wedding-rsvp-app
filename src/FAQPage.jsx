@@ -104,7 +104,7 @@ function FAQPage() {
         justifyContent: "center",
         margin: "0 auto",
         minHeight: 'calc(100vh - 35px)',
-        paddingBottom: '80px',
+        paddingBottom: '50px',
         width: isSmallScreen ? "85%" : "auto",
       }}
     >

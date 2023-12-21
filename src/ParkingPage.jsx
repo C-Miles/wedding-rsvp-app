@@ -19,7 +19,7 @@ function ParkingPage() {
         flexDirection: "column",
         height: "100%",
         minHeight: 'calc(100vh - 35px)',
-        paddingBottom: '80px',
+        paddingBottom: '50px',
       }}
     >
       <Typography

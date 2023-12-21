@@ -22,8 +22,8 @@ function VenuePage() {
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        minHeight: 'calc(100vh - 35px)',
-        paddingBottom: '80px',
+        minHeight: "calc(100vh - 35px)",
+        paddingBottom: "50px",
       }}
     >
       <Typography
@@ -82,6 +82,7 @@ function VenuePage() {
             href="https://www.google.com/maps/dir/?api=1&destination=Post+4+North+Fourth"
             underline="hover"
             style={{ display: "flex", alignItems: "center" }}
+            target="blank"
           >
             Get Directions <DirectionsIcon style={{ marginLeft: "5px" }} />
           </Link>
@@ -99,6 +100,7 @@ function VenuePage() {
             href="https://north4thcorridor.com/post-4/"
             underline="hover"
             style={{ display: "flex", alignItems: "center" }}
+            target="blank"
           >
             Venue Website <WebIcon style={{ marginLeft: "5px" }} />
           </Link>
