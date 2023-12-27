@@ -34,7 +34,7 @@ function FAQPage() {
     {
       question: "What should I wear?",
       answer:
-        "While we don't have a specific dress code, we suggest opting for formal attire to match the occasion's spirit. We kindly request that guests refrain from wearing blue jeans to maintain the event's elegant atmosphere.",
+        "While we don't have a specific dress code, we suggest opting for formal attire to match the occasion's spirit.",
     },
     {
       question:
