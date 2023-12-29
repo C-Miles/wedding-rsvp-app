@@ -22,6 +22,11 @@ function FAQPage() {
 
   const faqs = [
     {
+      question: "How do I RSVP?",
+      answer:
+        "Click the RSVP link in the toolbar or mobile menu, then fill out the form.",
+    },
+    {
       question: "What time should I arrive?",
       answer:
         "Guest arrival time begins at 4:00 pm with a ceremony start time of 4:30 pm.",

@@ -18,7 +18,7 @@ const CORRECT_PASSWORD = "twomiles";
 function LandingPage() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const isIpadPro = useMediaQuery('(min-width:1020px) and (max-width:1040px)');
+  const isIpadPro = useMediaQuery("(min-width:1020px) and (max-width:1040px)");
 
   const { register, handleSubmit } = useForm();
 
@@ -35,20 +35,20 @@ function LandingPage() {
     }
 
     setWrongPassword(false);
-    navigate("/rsvp");
+    navigate("/faq");
   };
 
   const [fadeEffectStyle, setFadeEffectStyle] = useState({
     opacity: 0,
-    transform: 'scale(0.6)'
+    transform: "scale(0.6)",
   });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeEffectStyle({
         opacity: 1,
-        transform: 'scale(1)',
-        transition: 'opacity 1s ease, transform 1s ease'
+        transform: "scale(1)",
+        transition: "opacity 1s ease, transform 1s ease",
       });
     }, 400);
 
@@ -85,7 +85,7 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
             fontSize: isSmallScreen ? 26 : 45,
             width: "100%",
-            ...fadeEffectStyle
+            ...fadeEffectStyle,
           }}
         >
           CHRISTOPHER & CASEY
@@ -101,13 +101,17 @@ function LandingPage() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
             fontSize: isSmallScreen ? 12 : 18,
             width: "100%",
-            ...fadeEffectStyle
+            ...fadeEffectStyle,
           }}
         >
           FEBRUARY 10, 2024 * COLUMBUS, OH
         </Typography>
         <img
-          src={(isSmallScreen || isIpadPro) ? LandingPagePortrait : LandingPageLandscape}
+          src={
+            isSmallScreen || isIpadPro
+              ? LandingPagePortrait
+              : LandingPageLandscape
+          }
           alt="Portrait"
           style={{
             width: isSmallScreen ? "auto" : "100vw",
@@ -120,7 +124,11 @@ function LandingPage() {
       </Box>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ position: "absolute", bottom: isSmallScreen ? "20%" : "1%", ...fadeEffectStyle }}
+        style={{
+          position: "absolute",
+          bottom: isSmallScreen ? "20%" : "1%",
+          ...fadeEffectStyle,
+        }}
       >
         {wrongPassword && (
           <Alert onClose={() => setWrongPassword(false)} severity="error">
