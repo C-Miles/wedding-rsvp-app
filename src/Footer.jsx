@@ -16,7 +16,8 @@ const Footer = () => {
     >
       <Link
         href="https://github.com/C-Miles"
-        style={{ color: "inherit", fontSize: "12px", textDecoration: "none", }}
+        style={{ color: "inherit", fontSize: "12px", textDecoration: "none" }}
+        target="blank"
       >
         Designed By C-Miles
       </Link>
