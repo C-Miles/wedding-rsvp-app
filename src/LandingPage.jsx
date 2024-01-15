@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import LandingPageLandscape from "./images/landing_page_landscape.jpg";
 import LandingPagePortrait from "./images/landing_page_portrait.jpg";
 
-const CORRECT_PASSWORD = "twomiles";
+const CORRECT_PASSWORD = "closed";
 
 function LandingPage() {
   const theme = useTheme();
