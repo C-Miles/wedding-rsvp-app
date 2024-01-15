@@ -98,8 +98,8 @@ function RSVP() {
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        minHeight: 'calc(100vh - 35px)',
-        paddingBottom: '50px'
+        minHeight: "calc(100vh - 35px)",
+        paddingBottom: "50px",
       }}
     >
       <div
@@ -109,7 +109,7 @@ function RSVP() {
           flexDirection: "column",
         }}
       >
-        {!isSubmitted && (
+        {/* {!isSubmitted && (
           <>
             <Typography
               align="center"
@@ -289,7 +289,48 @@ function RSVP() {
               </Button>
             </form>
           </div>
-        )}
+        )} */}
+
+        {/* // NOTE: Comment out this div for demo'ing normal functionality */}
+        <div
+          style={{
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            height: "100vh",
+          }}
+        >
+          <Typography
+            align="center"
+            component="h1"
+            gutterBottom
+            style={{ marginTop: "3%" }}
+            variant={isSmallScreen ? "h4" : "h3"}
+          >
+            RSVPs Have Concluded
+          </Typography>
+
+          <Divider
+            style={{
+              backgroundColor: "#2d2d2d",
+              marginBottom: "25px",
+              width: "80%",
+            }}
+          />
+
+          <img
+            alt="Venue"
+            src={isSmallScreen ? RSVPPortrait : RSVPLandscape}
+            style={{
+              alignSelf: "center",
+              boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.5)",
+              height: isSmallScreen ? "100vh" : "auto",
+              objectFit: "cover",
+              objectPosition: "center",
+              width: isSmallScreen ? "100vw" : "800px",
+            }}
+          />
+        </div>
       </div>
     </div>
   );
