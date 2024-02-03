@@ -34,6 +34,14 @@ const NavBar = () => {
       <ListItem button onClick={() => navigate("/faq")}>
         <ListItemText primary="FAQ" />
       </ListItem>
+      <ListItem
+        button
+        component="a"
+        href="https://www.macys.com/registry/Casey-Batchelor-Chris-Miles/2459919"
+        target="_blank"
+      >
+        <ListItemText primary="REGISTRY" />
+      </ListItem>
       <ListItem button onClick={() => navigate("/story")}>
         <ListItemText primary="OUR STORY" />
       </ListItem>
@@ -85,7 +93,12 @@ const NavBar = () => {
             <ListItem button onClick={() => navigate("/faq")}>
               <ListItemText primary="FAQ" />
             </ListItem>
-            <ListItem button component="a" href="https://www.macys.com/registry/Casey-Batchelor-Chris-Miles/2459919" target="_blank">
+            <ListItem
+              button
+              component="a"
+              href="https://www.macys.com/registry/Casey-Batchelor-Chris-Miles/2459919"
+              target="_blank"
+            >
               <ListItemText primary="REGISTRY" />
             </ListItem>
             <ListItem button onClick={() => navigate("/story")}>
